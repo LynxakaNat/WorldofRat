@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -19,10 +20,18 @@ public class Collition : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+       
+        if (NetworkManager.Singleton.IsServer)
         {
-            Destroy(this.gameObject);
+            Debug.Log("2nd stage");
+            if (collision.gameObject.tag == "Player")
+            {
+                Debug.Log("dec hea");
+                collision.GetComponent<Health>().DecreaseHealth(50);
+                Debug.Log("COllid");
+                Destroy(this.gameObject);
+            }
+
         }
-        
     }
 }
