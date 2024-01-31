@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 using Unity.Netcode;
+using static ServerScript;
+using Unity.Services.RemoteConfig;
 
 public class NetworkMovement : NetworkBehaviour 
 {
-    public float speed;
+    public NetworkVariable<float> speed = new NetworkVariable<float>();
     //private bool moving = false;
     public NetworkVariable<Vector2> direction = new NetworkVariable<Vector2>(default,NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     private float dtime;
@@ -18,6 +20,11 @@ public class NetworkMovement : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (NetworkManager.Singleton.IsServer)
+        {
+            RemoteConfigService.Instance.FetchConfigs(new userAttributes(), new appAttributes());
+            
+        }
         arenatrans = arena.transform.localScale;
     }
 
@@ -28,6 +35,10 @@ public class NetworkMovement : NetworkBehaviour
         if (IsOwner)
         {
             Move();
+        }
+        if (NetworkManager.Singleton.IsServer)
+        {
+            speed.Value = NetworkManager.GetComponent<ServerScript>().maxpspeed;
         }
         //ftransform.position = position.Value;
 
@@ -66,7 +77,7 @@ public class NetworkMovement : NetworkBehaviour
         Vector2 oldPos = transform.position; // take the character coordinates 
         Vector2 move = dir_v;
         dtime = Time.deltaTime;
-        Vector2 delta_move = move * (speed * dtime);
+        Vector2 delta_move = move * (speed.Value * dtime);
         Vector2 new_pos = oldPos + delta_move;
         if ((Math.Pow(new_pos.x, 2) / (Math.Pow((arenatrans.x / 2), 2))) + (Math.Pow(new_pos.y, 2) / (Math.Pow((arenatrans.y / 2), 2))) < 1)
         {

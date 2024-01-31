@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e50c0242-c800-4f6b-8c62-fac65fbd9de2\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"Speed\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 100.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"da6fc08e-bd4d-4f43-98a5-e036aab578da\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"MaxHealth\",\r\n      \"type\": \"int\",\r\n      \"value\": 10000\r\n   
+    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e50c0242-c800-4f6b-8c62-fac65fbd9de2\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"Speed\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 100.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"da6fc08e-bd4d-4f43-98a5-e036aab578da\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"MaxHealth\",\r\n      \"type\": \"int\",\r\n      \"value\": 10000\r\n   
+    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"a325c1ba-03c1-4fcc-875b-8a3599041880\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"77a1d0c4-dc44-4487-b8bc-dd4dfc229d7a\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2024-01-02T12:23:34Z\",\r\n    \"updatedAt\":
+    \"2024-01-02T12:23:34Z\"\r\n  }\r\n]"

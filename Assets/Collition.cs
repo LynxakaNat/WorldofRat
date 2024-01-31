@@ -23,13 +23,12 @@ public class Collition : MonoBehaviour
        
         if (NetworkManager.Singleton.IsServer)
         {
-            Debug.Log("2nd stage");
+            
             if (collision.gameObject.tag == "Player")
             {
-                Debug.Log("dec hea");
+                
                 collision.GetComponent<Health>().DecreaseHealth(50);
-                Debug.Log("COllid");
-                Destroy(this.gameObject);
+                this.gameObject.GetComponent<NetworkObject>().Despawn();
             }
 
         }

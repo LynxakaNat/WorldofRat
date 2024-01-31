@@ -9,9 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/SpringBoss.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/WinningScene.unity
+    guid: bcf5bfebe3ed0734eafbc309179c813d
+  - enabled: 1
     path: Assets/Scenes/LoseScreen.unity
     guid: f47612361a95ccd4cb6fa7053027db92
-  - enabled: 1
-    path: Assets/Scenes/LevelSelectScreen.unity
-    guid: 11c0d2ecaa40a814385cac9e79f94ec1
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

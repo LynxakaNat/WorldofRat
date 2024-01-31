@@ -10,6 +10,7 @@ public class AddClient : MonoBehaviour
     void Start()
     {
         this.gameObject.GetComponent<Button>().onClick.AddListener(() => {
+            Debug.Log("bUTTON worked");
             NetworkManager.Singleton.StartClient();
             Debug.Log(NetworkManager.Singleton.LocalClientId);
         });

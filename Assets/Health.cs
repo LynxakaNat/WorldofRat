@@ -29,7 +29,7 @@ public class Health : NetworkBehaviour
     {
  
         Destroy(this.gameObject); // here we will later change it for the "you lost loser" screen
-        SceneManager.LoadScene("LoseScreen");
+        NetworkManager.SceneManager.LoadScene("LoseScreen", LoadSceneMode.Single);
 
     }
     public int ReadHealth()
@@ -42,10 +42,10 @@ public class Health : NetworkBehaviour
         if (NetworkManager.Singleton.IsServer)
         {
             health.Value -= decrease;
-            //if (health.Value <= 0)
-            //{
-                //SceneManager.LoadScene("LoseScreen");
-            //}
+            if (health.Value <= 0)
+            {
+                Death();
+            }
         }
     }
     public void IncreaseHealth(int increase)
